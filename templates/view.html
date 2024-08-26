@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Click Count Check</title>
+    <style>
+        table, th, td {
+            border: 1px solid;
+        }
+    </style>
+    <script src="{{ url_for('static', filename='notif.js') }}"></script>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>UUID</th>
+            <th>Name</th>
+            <th>Click Count</th>
+        </tr>
+        {% for uuid, count in check_list.items() %}
+        <tr>
+            <td>{{ uuid }}</td>
+            <td>-</td>
+            <td>{{ count }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <input type="button" value="subscribe" onclick="subscribe()">
+</body>
+</html>
